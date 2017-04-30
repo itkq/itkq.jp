@@ -2,6 +2,7 @@ baseURL = "http://itkq.jp/"
 languageCode = "ja-JP"
 title = "itkq.jp"
 theme = "sustain"
+disqusShortname = "itkq-jp"
 
 [permalinks]
   blog = "/blog/:year/:month/:day/:slug"
