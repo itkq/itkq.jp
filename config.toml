@@ -1,0 +1,24 @@
+baseURL = "http://itkq.github.io"
+languageCode = "ja-JP"
+title = "itkq.jp"
+theme = "sustain"
+
+[permalinks]
+  post = "/:year/:month/:day/:slug"
+
+[params]
+  avatar = "profile.png"
+  author = "Takuya Kosugiyama"
+  description = "Describe your website"
+
+## Main Menu
+[[menu.main]]
+  name = "blog"
+  weight = 100
+  identifier = "blog"
+  url = "/blog/"
+[[menu.main]]
+  name = "projects"
+  identifier = "projects"
+  weight = 200
+  url = "/projects/"
