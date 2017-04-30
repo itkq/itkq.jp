@@ -12,6 +12,10 @@ dependencies:
     - git config --global user.name "itkq"
     - git config --global user.email "kuogsi@gmail.com"
 
+test:
+  override:
+    - "true"
+
 deployment:
   master:
     branch: master
