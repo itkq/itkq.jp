@@ -1,4 +1,4 @@
-baseURL = "http://itkq.github.io"
+baseURL = "http://itkq.jp"
 languageCode = "ja-JP"
 title = "itkq.jp"
 theme = "sustain"
@@ -9,7 +9,7 @@ theme = "sustain"
 [params]
   avatar = "profile.png"
   author = "Takuya Kosugiyama"
-  description = "Describe your website"
+  description = "itkq.jp"
 
 ## Main Menu
 [[menu.main]]
