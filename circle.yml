@@ -8,8 +8,7 @@ machine:
 
 dependencies:
   pre:
-    - wget https://github.com/spf13/hugo/releases/download/v0.20.6/hugo_0.20.6_Linux-ARM64.deb
-    - sudo dpkg -i hugo_0.20.6_Linux-ARM64.deb
+    - go get -v github.com/spf13/hugo
     - git config --global user.name "itkq"
     - git config --global user.email "kuogsi@gmail.com"
 
