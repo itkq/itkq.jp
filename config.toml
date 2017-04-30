@@ -4,7 +4,7 @@ title = "itkq.jp"
 theme = "sustain"
 
 [permalinks]
-  blog = "/:year/:month/:day/:slug"
+  blog = "/blog/:year/:month/:day/:slug"
 
 [params]
   avatar = "profile.png"
