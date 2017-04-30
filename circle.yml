@@ -8,9 +8,10 @@ machine:
 
 dependencies:
   pre:
-    - go get -v github.com/spf13/hugo
-    - git config --global user.name "CircleCI"
-    - git config --global user.email "circleci@example.com"
+    - wget https://github.com/spf13/hugo/releases/download/v0.20.6/hugo_0.20.6_Linux-ARM64.deb
+    - sudo dpkg -i hugo_0.20.6_Linux-ARM64.deb
+    - git config --global user.name "itkq with circleci"
+    - git config --global user.email "kuogsi@gmail.com"
 
 deployment:
   master:
@@ -18,6 +19,7 @@ deployment:
     commands:
       - git clone git@github.com:itkq/itkq.github.io.git public
       - hugo
-      - cd public && git add .
-      - cd public && git commit -m "[ci skip] publish"
-      - cd public && git push origin master
+      - cd public \
+        && git add -A \
+        && git commit -m "[ci skip] publish" \
+        && git push -f origin gh-pages
