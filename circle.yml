@@ -10,16 +10,11 @@ dependencies:
   pre:
     - wget https://github.com/spf13/hugo/releases/download/v0.20.6/hugo_0.20.6_Linux-ARM64.deb
     - sudo dpkg -i hugo_0.20.6_Linux-ARM64.deb
-    - git config --global user.name "itkq with circleci"
+    - git config --global user.name "itkq"
     - git config --global user.email "kuogsi@gmail.com"
 
 deployment:
   master:
     branch: master
     commands:
-      - git clone git@github.com:itkq/itkq.github.io.git public
-      - hugo
-      - cd public \
-        && git add -A \
-        && git commit -m "[ci skip] publish" \
-        && git push -f origin gh-pages
+      - ./script/deploy.sh
