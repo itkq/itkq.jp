@@ -1,0 +1,3 @@
+[submodule "themes/sustain"]
+	path = themes/sustain
+	url = git@github.com:itkq/hugo-sustain.git
