@@ -4,6 +4,7 @@ title = "itkq.jp"
 theme = "sustain"
 disqusShortname = "itkq-jp"
 googleAnalytics = "UA-71205730-2"
+DefaultContentLanguage = "jp"
 
 [permalinks]
   blog = "/blog/:year/:month/:day/:slug"
