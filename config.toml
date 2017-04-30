@@ -8,7 +8,7 @@ theme = "sustain"
 
 [params]
   avatar = "profile.png"
-  author = "Takuya Kosugiyama"
+  author = "itkq"
   description = "itkq.jp"
 
 ## Main Menu
@@ -22,3 +22,8 @@ theme = "sustain"
   identifier = "projects"
   weight = 200
   url = "/projects/"
+[[menu.main]]
+  name = "resume"
+  identifier = "resume"
+  weight = 300
+  url = "/resume/"
