@@ -9,8 +9,8 @@
         {{ partial "header" . }}
         {{ if isset .Params "projectpage" }}
           {{ .Render "projects" }}
-        {{ else if isset .Params "resumepage" }}
-          {{ .Render "resume" }}
+        {{ else if isset .Params "profilepage" }}
+          {{ .Render "profile" }}
         {{ else }}
         <div class="container">
           <div class="blog-post">
