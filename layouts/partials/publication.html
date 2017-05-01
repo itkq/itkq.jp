@@ -1,0 +1,16 @@
+<section class="thirteen columns">
+  <h1>{{ .Site.Data.publication.name }}</h1>
+  {{ range .Site.Data.publication.source }}
+  <article>
+    <header>
+      <h1>{{ .title }}</h1>
+      <span>
+        <em>{{ .author }}</em>, {{ .co_author }}
+      </span>
+    </header>
+    <p>
+      {{ .description }}
+    </p>
+  </article>
+  {{ end }}
+</section>

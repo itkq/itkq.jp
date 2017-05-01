@@ -1,0 +1,6 @@
+name: Publication
+source:
+  - title: A Flow Aggregation Method Based on Link Delay in SDN
+    author: Takuya Kosugiyama
+    co_author: Kazuki Tanabe, Hiroki Nakayama, Tsunemasa Hayashi, Katsunori Yamaoka
+    description: Proceedings of IEEE ICC 2017 Communications QoS, Reliability, and Modeling Symposium (to appear)
