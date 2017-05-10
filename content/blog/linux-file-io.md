@@ -5,7 +5,7 @@ description = ""
 tags = ["Linux"]
 title = "Linux におけるファイル I/O の基礎"
 slug = "linux-file-and-io"
-draft = true
+draft = false
 +++
 
 すべてがファイルというモデルの Linux (Unix) において、ファイル I/O (以降単に I/O と書く) を知っておいて損はない。
