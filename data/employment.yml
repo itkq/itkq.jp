@@ -3,8 +3,8 @@ source:
   - prof: Site Reliability Engineer (Part-time)
     place: Cookpad Inc., Japan
     time: Dec. 2016 to Present
-    description: Improve log architecture.
-  - prof: System Engineer (Intern)
+    description: Improve log architecture (Fluentd).
+  - prof: System Engineer (Internship)
     place: Diverta Inc., Japan
     time: Mar. 2015 to Mar. 2016
     description: Improve and fix bugs in original CMS framework (PHP).
