@@ -1,4 +1,4 @@
-baseURL = "http://itkq.jp/"
+baseURL = "https://itkq.jp/"
 languageCode = "ja-JP"
 title = "itkq.jp"
 theme = "sustain"
