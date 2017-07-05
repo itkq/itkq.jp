@@ -31,7 +31,10 @@
             <div class="panel-body">
               <div class="blogpost">
                 {{ .Content }}
-                {{ partial "social_button" }}
+                {{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
+                {{ else }}
+                  {{ partial "social_button" }}
+                {{ end }}
                 <hr>
                 <div class="related-posts">
                   <h5>Related Posts</h5>
