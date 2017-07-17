@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/itkq
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://itkq.jp
+  * I am itkq (https://keybase.io/itkq) on keybase.
+  * I have a public key ASDBnNWJy8KGros0EwG_jp_VkMHCY-1YYK8sTjm8xUAshAo
+
+To do so, I am signing this object:
+
+{
+    &quot;body&quot;: {
+        &quot;key&quot;: {
+            &quot;eldest_kid&quot;: &quot;0120c19cd589cbc286ae8b341301bf8e9fd590c1c263ed5860af2c4e39bcc5402c840a&quot;,
+            &quot;host&quot;: &quot;keybase.io&quot;,
+            &quot;kid&quot;: &quot;0120c19cd589cbc286ae8b341301bf8e9fd590c1c263ed5860af2c4e39bcc5402c840a&quot;,
+            &quot;uid&quot;: &quot;f154c5ebc92ad9ae285d6146c1fe4b19&quot;,
+            &quot;username&quot;: &quot;itkq&quot;
+        },
+        &quot;merkle_root&quot;: {
+            &quot;ctime&quot;: 1500288977,
+            &quot;hash&quot;: &quot;855bfacb2334b2ccea0f2d1413e3ded405eb8534d500d0d33ad709e3e06be477f9f8661f807c4440a9a4a81ad92af884d4d246ca549536f2192ad842c2692b20&quot;,
+            &quot;hash_meta&quot;: &quot;8481d848bc6e15454e23d570217c6c2105107a4163157ab438f3a75fdc922472&quot;,
+            &quot;seqno&quot;: 1238050
+        },
+        &quot;service&quot;: {
+            &quot;hostname&quot;: &quot;itkq.jp&quot;,
+            &quot;protocol&quot;: &quot;https:&quot;
+        },
+        &quot;type&quot;: &quot;web_service_binding&quot;,
+        &quot;version&quot;: 1
+    },
+    &quot;client&quot;: {
+        &quot;name&quot;: &quot;keybase.io go client&quot;,
+        &quot;version&quot;: &quot;1.0.24&quot;
+    },
+    &quot;ctime&quot;: 1500289210,
+    &quot;expire_in&quot;: 504576000,
+    &quot;prev&quot;: &quot;18c891d12068ef7fb2f8f8eaa11ce8835f2ff2940c112c6edc1771c3b125983d&quot;,
+    &quot;seqno&quot;: 8,
+    &quot;tag&quot;: &quot;signature&quot;
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgwZzVicvChq6LNBMBv46f1ZDBwmPtWGCvLE45vMVALIQKp3BheWxvYWTFAzt7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwYzE5Y2Q1ODljYmMyODZhZThiMzQxMzAxYmY4ZTlmZDU5MGMxYzI2M2VkNTg2MGFmMmM0ZTM5YmNjNTQwMmM4NDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYzE5Y2Q1ODljYmMyODZhZThiMzQxMzAxYmY4ZTlmZDU5MGMxYzI2M2VkNTg2MGFmMmM0ZTM5YmNjNTQwMmM4NDBhIiwidWlkIjoiZjE1NGM1ZWJjOTJhZDlhZTI4NWQ2MTQ2YzFmZTRiMTkiLCJ1c2VybmFtZSI6Iml0a3EifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE1MDAyODg5NzcsImhhc2giOiI4NTViZmFjYjIzMzRiMmNjZWEwZjJkMTQxM2UzZGVkNDA1ZWI4NTM0ZDUwMGQwZDMzYWQ3MDllM2UwNmJlNDc3ZjlmODY2MWY4MDdjNDQ0MGE5YTRhODFhZDkyYWY4ODRkNGQyNDZjYTU0OTUzNmYyMTkyYWQ4NDJjMjY5MmIyMCIsImhhc2hfbWV0YSI6Ijg0ODFkODQ4YmM2ZTE1NDU0ZTIzZDU3MDIxN2M2YzIxMDUxMDdhNDE2MzE1N2FiNDM4ZjNhNzVmZGM5MjI0NzIiLCJzZXFubyI6MTIzODA1MH0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJpdGtxLmpwIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMjQifSwiY3RpbWUiOjE1MDAyODkyMTAsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiMThjODkxZDEyMDY4ZWY3ZmIyZjhmOGVhYTExY2U4ODM1ZjJmZjI5NDBjMTEyYzZlZGMxNzcxYzNiMTI1OTgzZCIsInNlcW5vIjo4LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQD7qBfTrRP9qMzo7DAjfWiaeqJsxqL/VU6lKgYcXMERQ1e8Nlj0tK0Tb4+KqOgTaDzlJhV6kIaOVO39HCGzWQAOoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCCgaHvaV8QcGJhes0aWG4dMBfLvyC4z7I9l6QNB9ACgMqN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/itkq
+
+==================================================================
