@@ -3,6 +3,7 @@ date = "2017-11-19T02:51:49+09:00"
 description = ""
 tags = ["Vim", "LaTeX"]
 title = "Vim + LaTeX でいい感じに修論を書く"
+slug = "thesis-vim-latex"
 draft = false
 +++
 
