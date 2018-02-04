@@ -24,4 +24,4 @@ deployment:
   master:
     branch: master
     commands:
-      - ./script/deploy.sh
+      - make public

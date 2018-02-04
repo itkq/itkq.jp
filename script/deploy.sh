@@ -1,6 +1,6 @@
 #!/bin/bash
 
-hugo -t sustain
+hugo -t sustain --uglyURLs
 git rev-parse HEAD > public/revision/index.html
 git add public
 LANG=C git commit -m "[ci skip] rebuild at $(date)"
