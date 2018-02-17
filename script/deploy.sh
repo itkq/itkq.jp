@@ -1,6 +1,6 @@
 #!/bin/bash
 
-hugo -t sustain
+hugo
 mkdir -p public/revision
 git rev-parse HEAD > public/revision/index.html
 git add public -f
