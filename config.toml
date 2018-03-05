@@ -1,47 +1,10 @@
-# baseURL = "https://itkq.jp/"
-# languageCode = "ja-JP"
-# title = "itkq.jp"
-# theme = "sustain"
-# disqusShortname = "itkq-jp"
-# googleAnalytics = "UA-71205730-2"
-# DefaultContentLanguage = "jp"
-# latestPostsCount = "3"
-#
-# [permalinks]
-#   blog = "/blog/:year/:month/:day/:slug"
-#
-# [params]
-#   avatar = "img/profile.png"
-#   author = "itkq"
-#   description = "itkq.jp"
-#   latestpostscount = "3"
-
-## Main Menu
-# [[menu.main]]
-#   name = "blog"
-#   weight = 100
-#   identifier = "blog"
-#   url = "/blog/"
-# [[menu.main]]
-#   name = "projects"
-#   identifier = "projects"
-#   weight = 200
-#   url = "/projects/"
-# [[menu.main]]
-#   name = "profile"
-#   identifier = "profile"
-#   weight = 300
-#   url = "/profile/"
-
 baseurl             = "https://itkq.jp/"
 builddrafts         = false
 canonifyurls        = true
-# contentdir          = "content"
 languageCode        = "ja-JP"
 layoutdir           = "layouts"
 publishdir          = "public"
 theme               = "cocoa"
-author              = "Takuya Kosugiyama"
 title               = "itkq.jp"
 pygmentsuseclasses  = true
 disqusshortname     = "itkq-jp"
@@ -64,15 +27,16 @@ identifier             = "about"
 url                    = "/about/"
 
 [params]
+googleSiteVerification = "AyWEWMfqdOijgoPW5yMy188xoQqY46L6pFXyd3Jizyc"
 include_rss            = true                          # include RSS <link> tag in <head> and show RSS icon
 latestpostscount       = 5                             # how many posts to display on the home page
 i18n_flags             = false                         # whether to display small country flags for available translations
-author                 = "@itkq"
+author                 = "itkq"
 cachebuster            = true                          # add the current unix timestamp in query string for cache busting css assets
 dateform               = "Jan 2, 2006"
 dateformfull           = "Mon Jan 2 2006 15:04:05 MST"
-description            = "Hello"
-email                  = "kuogsi@gmail.com"
+# description            = "Hello"
+email                  = "re@itkq.jp"
 extracssfiles          = [ "/css/override.css" ]       # In your `static` directory, add/remove files as necessary.
 faviconfile            = "img/leaf.ico"
 github                 = "https://github.com/itkq"
