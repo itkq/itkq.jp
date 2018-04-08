@@ -10,7 +10,11 @@ title = "About"
 
 <ul>
   <li class="career-item">
-    <span class="date">Dec. 2016 - in present</span>
+    <span class="date">Apr. 2018 - in present</span>
+    <span>Software Engineer @ Cookpad Inc.</span>
+  </li>
+  <li class="career-item">
+    <span class="date">Dec. 2016 - Mar. 2018</span>
     <span>Software Engineer (Part-time) @ Cookpad Inc.</span>
   </li>
 </ul>
