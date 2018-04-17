@@ -5,6 +5,7 @@ title = "About"
 
 +++
 
+Software Engineer. Likes automation and animation.
 
 ### Experience
 
