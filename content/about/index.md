@@ -33,6 +33,15 @@ Software Engineer. Likes automation and animation.
   </li>
 </ul>
 
+### Certification
+
+<ul>
+  <li class="career-item">
+    <span class="date">Aug. 2018</span>
+    <span>AWS Certified Solutions Architect - Associate (Released February 2018)</span>
+  </li>
+</ul>
+
 ### Links
 - [Keybase](https://keybase.io/itkq)
 - [Medium](https://medium.com/@itkq)
