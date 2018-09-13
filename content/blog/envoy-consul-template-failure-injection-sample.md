@@ -30,7 +30,7 @@ $ consul kv put "envoy_override/$APP_ID/fault/http/abort/http_status" 503
 続いて、front に対してリクエストを投げ続ける。
 
 ```
-$ while :; do curl -sLI locaihost:3000/backend -o /dev/null -w '%{http_code}\n'; sleep 1; done
+$ while :; do curl -sLI localhost:3000/backend -o /dev/null -w '%{http_code}\n'; sleep 1; done
 200
 200
 200
