@@ -5,18 +5,18 @@ title = "About"
 
 +++
 
-Software Engineer. Likes automation and animation.
+Software Engineer. Likes automation and animation. Interested in SRE and Chaos Engineering.
 
 ### Experience
 
 <ul>
   <li class="career-item">
     <span class="date">Apr. 2018 - in present</span>
-    <span>Software Engineer @ Cookpad Inc.</span>
+    <span>Software Engineer (SRE group) @ Cookpad Inc.</span>
   </li>
   <li class="career-item">
     <span class="date">Dec. 2016 - Mar. 2018</span>
-    <span>Software Engineer (Part-time) @ Cookpad Inc.</span>
+    <span>Part-time Software Engineer @ Cookpad Inc.</span>
   </li>
 </ul>
 
