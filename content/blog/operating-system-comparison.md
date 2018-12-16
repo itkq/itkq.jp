@@ -40,5 +40,5 @@ Solaris のオープンソースプロジェクトによって、OpenSolaris と
 
 
 # 参考文献
-- [The Art of UNIX Programming](https://www.amazon.co.jp/dp/4756149480/)
+- The Art of UNIX Programming
 - [Solaris - ウィキペディア](https://ja.wikipedia.org/wiki/Solaris)

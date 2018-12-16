@@ -87,5 +87,5 @@ Unix 思想を一言でまとめると：
 > Keep It Simple, Stupid!
 
 # 参考文献
-- [ それがぼくには楽しかったから 全世界を巻き込んだリナックス革命の真実 ]( https://www.amazon.co.jp/dp/4796880011/ )
-- [The Art of UNIX Programming](https://www.amazon.co.jp/dp/4756149480/)
+- それがぼくには楽しかったから 全世界を巻き込んだリナックス革命の真実
+- The Art of UNIX Programming
