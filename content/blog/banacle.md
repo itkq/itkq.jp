@@ -1,5 +1,5 @@
 +++
-title = "Slack 上で単純な bot 攻撃に対処する"
+title = "Slack 上で AWS への単純な bot 攻撃に対処する"
 date = "2019-01-12T18:46:24+09:00"
 draft = false
 slug = "banacle"
