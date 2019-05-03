@@ -2,6 +2,7 @@
 title = "英会話を始めて1年弱で辞めた"
 date = "2019-05-04T02:27:15+09:00"
 draft = false
+slug = "quit-gaba"
 tags = ["English"]
 
 +++
