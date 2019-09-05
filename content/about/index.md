@@ -49,5 +49,6 @@ Software Engineer. Likes automation and animation. Interested in SRE and Chaos E
 - [Bookmeter](https://bookmeter.com/users/764036)
 - [Eventernote](https://www.eventernote.com/users/itkq)
 - [Annict](https://annict.com/@itkq)
+- [Wishlist](https://www.amazon.co.jp/wishlist/1AMZQHMZZ4JA1)
 
 <br />
