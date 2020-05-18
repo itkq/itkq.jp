@@ -49,6 +49,6 @@ Software Engineer. Likes automation and animation. Interested in SRE and Chaos E
 - [Hatena Blog](http://itkq.hatenablog.com)
 - [Eventernote](https://www.eventernote.com/users/itkq)
 - [Annict](https://annict.com/@itkq)
-- [Wishlist](https://www.amazon.co.jp/wishlist/1AMZQHMZZ4JA1)
+- [Wishlist](https://itkq.page.link/wishlist)
 
 <br />
