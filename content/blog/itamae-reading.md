@@ -3,13 +3,15 @@ draft = false
 date = "2017-03-19T19:25:53+09:00"
 title = "itamae コードリーディング"
 slug = "itamae-reading"
-tags = [ "itamae", "Code reading" ]
+tags = [ "Itamae", "Reading" ]
 
 +++
 
 元々は NeoVim を導入しようとしていた．その一環で，dotfiles を良い感じにしようとしていて，mitamae によるプロビジョニング設定の [k0kubun/dotfiles](https://github.com/k0kubun/dotfiles) から fork したものを整理していた．NeoBundle の NeoVim 対応版である dein.vim を導入する際，curl が必要だった．itamae の Resource ドキュメントを読むと，`http_request` というリソースがあった．これ使えば Docker の ADDコマンド的なことできるのかなと思ったけど詳細が書いてなくて，そういえば itamae 自体どうやって動いてるんだと気になったので読むことにした．
 
 [itamae-kitchen/itamae/](https://github.com/itamae-kitchen/itamae/)
+
+<!--more-->
 
 # Code reading
 

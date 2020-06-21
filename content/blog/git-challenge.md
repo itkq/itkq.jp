@@ -12,6 +12,8 @@ tags = [ "Git", "Contest" ]
 
 [git challenge 2016.11.20](https://mixi-recruit.snar.jp/jobboard/detail.aspx?id=VIqrrPf60Mo)
 
+<!--more-->
+
 ## 朝
 
 会場はmixiのビルだった。

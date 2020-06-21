@@ -3,13 +3,15 @@ title = "一見不可解な TLS 証明書失効"
 date = "2020-06-20T16:30:52+09:00"
 draft = false
 slug = "x509-chain"
-
+tags = ["X509", "TLS"]
 +++
 
 この記事は、所属する会社の社内ブログに投稿した内容を一部改変したものです。
 
 # 遭遇した事象
 Prometheus と https://github.com/prometheus/blackbox_exporter を使って TLS サーバー証明書の有効性と有効期限を網羅的に監視しています。最近 blackbox_exporter が blog.cookpad.dk:443 の証明書の期限が切れている、と報告してきました。しかし同時に blackbox_exporter は TLS 接続には成功している、と報告していたのです。確認のため、Chrome で https://blog.cookpad.dk/ にアクセスしてみると、問題ありませんでした。Firefox でも同様でした。次に手元の MacBook Pro から cURL してみます。
+
+<!--more-->
 
 ```console
 $ curl -v https://blog.cookpad.dk
@@ -38,7 +40,7 @@ how to fix it, please visit the web page mentioned above.
 証明書失効エラーになりました。ブラウザでは確かに有効な証明書だとされているのに一体どういうことなのか、これを紐解いていく話です。
 
 # TLS サーバー証明書のおさらい
-TLS のハンドシェイクは単純化するとだいたい次のことが行われます [^1]。
+TLS のハンドシェイクは単純化するとだいたい次のことが行われます[^1]。
 
 1. お互い挨拶し、サポートするアルゴリズムを交換してネゴシエーションする
 2. サーバーが自分の公開鍵証明書をクライアントに送る
@@ -46,10 +48,10 @@ TLS のハンドシェイクは単純化するとだいたい次のことが行�
 4. 1 で合意したアルゴリズムを利用して、実際の通信で利用する共通鍵を交換する。このときサーバーの公開鍵を認証する
 5. 以降、共通鍵で通信内容を暗号化する
 
-2 で登場する公開鍵証明書 が TLS サーバー証明書のことです。この公開鍵証明書は **X.509** (通常 RFC [^2] で定義された標準) に従っています。X.509 は **PKI** (公開鍵基盤, Public Key Infrastructure) を実現するためのものです。
+2 で登場する公開鍵証明書 が TLS サーバー証明書のことです。この公開鍵証明書は **X.509** (通常 RFC[^2] で定義された標準) に従っています。X.509 は **PKI** (公開鍵基盤, Public Key Infrastructure) を実現するためのものです。
 
 # PKI
-TLS の主な目的は「2 つの通信者間でプライバシーとデータの完全性を提供すること」とされています [^1]。前のセクションで触れた TLS ハンドシェイクでは、通信相手の**認証**・暗号アルゴリズムと鍵のネゴシエーションをします。もし適切に認証が行われなかったとすると、例えば 中間者攻撃と呼ばれる盗聴が成立してしまいます。具体例は [中間者攻撃 - Wikipedia](https://ja.wikipedia.org/wiki/%E4%B8%AD%E9%96%93%E8%80%85%E6%94%BB%E6%92%83#%E5%85%AC%E9%96%8B%E9%8D%B5%E6%9A%97%E5%8F%B7%E3%81%AB%E5%AF%BE%E3%81%97%E3%81%A6%E4%B8%AD%E9%96%93%E8%80%85%E6%94%BB%E6%92%83%E3%81%8C%E6%88%90%E5%8A%9F%E3%81%99%E3%82%8B%E4%BE%8B) が分かりやすいです。この問題を回避するためには、公開鍵とその持ち主の対応関係を保証する仕組みが必要であり、それが PKI です。PKI も [公開鍵基盤 - Wikipedia](https://ja.wikipedia.org/wiki/%E5%85%AC%E9%96%8B%E9%8D%B5%E5%9F%BA%E7%9B%A4) が分かりやすいので引用します。
+TLS の主な目的は「2 つの通信者間でプライバシーとデータの完全性を提供すること」とされています[^1]。前のセクションで触れた TLS ハンドシェイクでは、通信相手の**認証**・暗号アルゴリズムと鍵のネゴシエーションをします。もし適切に認証が行われなかったとすると、例えば 中間者攻撃と呼ばれる盗聴が成立してしまいます。具体例は [中間者攻撃 - Wikipedia](https://ja.wikipedia.org/wiki/%E4%B8%AD%E9%96%93%E8%80%85%E6%94%BB%E6%92%83#%E5%85%AC%E9%96%8B%E9%8D%B5%E6%9A%97%E5%8F%B7%E3%81%AB%E5%AF%BE%E3%81%97%E3%81%A6%E4%B8%AD%E9%96%93%E8%80%85%E6%94%BB%E6%92%83%E3%81%8C%E6%88%90%E5%8A%9F%E3%81%99%E3%82%8B%E4%BE%8B) が分かりやすいです。この問題を回避するためには、公開鍵とその持ち主の対応関係を保証する仕組みが必要であり、それが PKI です。PKI も [公開鍵基盤 - Wikipedia](https://ja.wikipedia.org/wiki/%E5%85%AC%E9%96%8B%E9%8D%B5%E5%9F%BA%E7%9B%A4) が分かりやすいので引用します。
 
 > PKI は、公開鍵とその持ち主の対応関係を**認証局** (CA、Certification Authority) という第三者機関を用いる事で保証するための技術である。
 >
@@ -178,17 +180,17 @@ Certificate chain
 上に挙げた証明書のカテゴリ (と改めてルート証明書) を解説します。
 
 ## リーフ証明書
-証明書チェーンの (階層構造の) 末端であるため、リーフ証明書と呼ばれます。リーフ証明書は CA 証明書 (認証局証明書)ではないため、別の証明書を署名できません [^3]。一般に Web ブラウジングする上ではサーバー証明書になっているリーフ証明書を利用する機会が多いので、サーバー証明書と言われることが多いです。
+証明書チェーンの (階層構造の) 末端であるため、リーフ証明書と呼ばれます。リーフ証明書は CA 証明書 (認証局証明書)ではないため、別の証明書を署名できません[^3]。一般に Web ブラウジングする上ではサーバー証明書になっているリーフ証明書を利用する機会が多いので、サーバー証明書と言われることが多いです。
 
 ## 中間証明書
-リーフ証明書を発行する中間 CA が持つ証明書です。公に信頼されるルート CA に基づく証明書チェーンは 3 階層以上になります。もし 2 階層の場合、すべてのリーフ証明書はルート CA が発行することになり、証明書発行を行うにあたり高頻度でルート CA の秘密鍵を使います。これは秘密鍵漏洩のリスクをいたずらに高めている状態です。したがって、ルート CA はオフラインにすることがセキュリティ上の基本要件とされており [^4]、中間 CA が必要になります。中間 CA を置き階層レベルを深くすることで、証明書失効オペレーションの観点でも都合が良くなります [^5]。
+リーフ証明書を発行する中間 CA が持つ証明書です。公に信頼されるルート CA に基づく証明書チェーンは 3 階層以上になります。もし 2 階層の場合、すべてのリーフ証明書はルート CA が発行することになり、証明書発行を行うにあたり高頻度でルート CA の秘密鍵を使います。これは秘密鍵漏洩のリスクをいたずらに高めている状態です。したがって、ルート CA はオフラインにすることがセキュリティ上の基本要件とされており[^4]、中間 CA が必要になります。中間 CA を置き階層レベルを深くすることで、証明書失効オペレーションの観点でも都合が良くなります[^5]。
 
 ## ルート証明書
 X.509 では Subject と Issuer が同値で自分自身を署名した証明書のことを自己署名証明書 (self-signed certificate) といいます。自分が自分を署名していることから、署名の検証は必ず成功します。また、俗にオレオレ証明書と呼ばれます。X.509 でトラストアンカーとなるルート CA は、ルート証明書と呼ばれる自己署名証明書を発行します。
 
-Microsoft は、[Microsoft Trusted Root Program](https://docs.microsoft.com/en-us/security/trusted-root/program-requirements) に基づいて信頼するルート証明書を定め、Windows 上の信頼するルート証明書を更新します。同じように Apple には [Apple Root Certificate Program](https://www.apple.com/certificateauthority/ca_program.html) があります。Linux 自体には中央管理のルート証明書プログラムがありません [^6]。
+Microsoft は、[Microsoft Trusted Root Program](https://docs.microsoft.com/en-us/security/trusted-root/program-requirements) に基づいて信頼するルート証明書を定め、Windows 上の信頼するルート証明書を更新します。同じように Apple には [Apple Root Certificate Program](https://www.apple.com/certificateauthority/ca_program.html) があります。Linux 自体には中央管理のルート証明書プログラムがありません[^6]。
 
-Mozilla Firefox は、[Mozilla Network Security Services (NSS)](http://www.mozilla.org/projects/security/pki/nss/) ライブラリを利用して証明書の検証を行います。このライブラリには [Mozilla Root Store Policy](http://www.mozilla.org/projects/security/certs/policy/) に基づくルート証明書が含まれます。Google Chrome は基本的には OS のトラストストアを参照しますが、一般的な Linux ディストリビューションで動作する場合は Mozilla Root Store のルート証明書を利用します [^7] [^18] [^19]。ただし、これらのブラウザは、ベンダー独自の基準で一部の証明書を BAN することもあります。
+Mozilla Firefox は、[Mozilla Network Security Services (NSS)](http://www.mozilla.org/projects/security/pki/nss/) ライブラリを利用して証明書の検証を行います。このライブラリには [Mozilla Root Store Policy](http://www.mozilla.org/projects/security/certs/policy/) に基づくルート証明書が含まれます。Google Chrome は基本的には OS のトラストストアを参照しますが、一般的な Linux ディストリビューションで動作する場合は Mozilla Root Store のルート証明書を利用します[^7] [^18] [^19]。ただし、これらのブラウザは、ベンダー独自の基準で一部の証明書を BAN することもあります。
 
 これらのルート証明書プログラムは、[CA/B Forum Baseline Requirements](https://cabforum.org/baseline-requirements-documents/) を参照しています。CA/B Forum (The Certification Authority Browser Forum) は CA・ブラウザや OS ベンダーなどを構成メンバーとするボランティア団体で、Web PKI のガイドラインの策定を行っています。Microsoft, Apple, Mozilla, Google などのベンダーはこの団体のメンバーです。
 
@@ -205,20 +207,20 @@ Mozilla Firefox は、[Mozilla Network Security Services (NSS)](http://www.mozil
 	- SKI: B1:06:3D:B1:93:7C:DA:11:55:5F:1E:48:8A:4E:3A:DF:CB:5B:A9:4A
 	- AKI: keyid:8D:8C:5E:C4:54:AD:8A:E1:77:E9:9B:F9:9B:05:E1:B8:01:8D:61:E1
 	- Validity
-- notBefore=Sep 10 00:00:00 2019 GMT
-	- notAfter=Sep  9 23:59:59 2020 GMT
+      - notBefore=Sep 10 00:00:00 2019 GMT
+  	  - notAfter=Sep  9 23:59:59 2020 GMT
 - 中間証明書
 	- SKI: 8D:8C:5E:C4:54:AD:8A:E1:77:E9:9B:F9:9B:05:E1:B8:01:8D:61:E1
 	- AKI: keyid:53:79:BF:5A:AA:2B:4A:CF:54:80:E1:D8:9B:C0:9D:F2:B2:03:66:CB
 	- Validity
-- notBefore=Nov  2 00:00:00 2018 GMT
-	- notAfter=Dec 31 23:59:59 2030 GMT
+      - notBefore=Nov  2 00:00:00 2018 GMT
+      - notAfter=Dec 31 23:59:59 2030 GMT
 - クロス証明書
 	- SKI: 53:79:BF:5A:AA:2B:4A:CF:54:80:E1:D8:9B:C0:9D:F2:B2:03:66:CB
 	- AKI: keyid:AD:BD:98:7A:34:B4:26:F7:FA:C4:26:54:EF:03:BD:E0:24:CB:54:1A
 	- Validity
-	- notBefore=May 30 10:48:38 2000 GMT
-	- **notAfter=May 30 10:48:38 2020 GMT**
+      - notBefore=May 30 10:48:38 2000 GMT
+      - **notAfter=May 30 10:48:38 2020 GMT**
 
 クロス証明書が失効しています! ではなぜブラウザは検証に成功したのでしょうか。
 
@@ -234,8 +236,8 @@ Mozilla Firefox は、[Mozilla Network Security Services (NSS)](http://www.mozil
 1. CN=blog.cookpad.dk (リーフ) → CN=Sectigo RSA Domain Validation Secure Server CA (中間) → CN=USERTrust RSA Certification Authority (クロス) → CN=AddTrust External CA root (ルート)
 2. CN=blog.cookpad.dk (リーフ) → CN=Sectigo RSA Domain Validation Secure Server CA (中間) → CN=USERTrust RSA Certification Authority (ルート)
 
-いつ 1 のルート証明書が各 OS やブラウザのトラストストアに入ったのかは詳しく追いませんが、NSS のトラストストアには 2014 年に追加されている [^8] [^20] ため、
-少なくとも 2015 年以降のシステムのトラストストアには含まれていると言ってよいでしょう (Chrome については EV 証明書対象にするチケットしか見つかりませんでした [^9]。したがって、手元の macOS (Catalina) 上の Chrome や Firefox のブラウザ・cURL は 1 のルート証明書を参照できるはずです。
+いつ 1 のルート証明書が各 OS やブラウザのトラストストアに入ったのかは詳しく追いませんが、NSS のトラストストアには 2014 年に追加されている[^8] [^20] ため、
+少なくとも 2015 年以降のシステムのトラストストアには含まれていると言ってよいでしょう (Chrome については EV 証明書対象にするチケットしか見つかりませんでした[^9]。したがって、手元の macOS (Catalina) 上の Chrome や Firefox のブラウザ・cURL は 1 のルート証明書を参照できるはずです。
 
 # cURL が証明書チェーンを検証できなかった理由
 手元の macOS の cURL は OpenSSL フォークの LibreSSL を使っており、 LibreSSL v2.8.3 がバンドルされていました。
@@ -248,7 +250,7 @@ Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s
 Features: AsynchDNS GSS-API HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz MultiSSL NTLM NTLM_WB SPNEGO SSL UnixSockets
 ```
 
-このバージョンの LibreSSL は、有効な証明書チェーンが別に作れる可能性があっても、途中で失効している証明書があった場合は検証を即座に失敗させる実装になっており、証明書切れのエラーになったようです。なお v.3.2.0 では別の証明書チェーンも探す変更が入っており [^10]、たしかに最新の cURL で試してみるとエラーは起きませんでした。
+このバージョンの LibreSSL は、有効な証明書チェーンが別に作れる可能性があっても、途中で失効している証明書があった場合は検証を即座に失敗させる実装になっており、証明書切れのエラーになったようです。なお v.3.2.0 では別の証明書チェーンも探す変更が入っており[^10]、たしかに最新の cURL で試してみるとエラーは起きませんでした。
 
 ```console
 $ /opt/brew/opt/curl/bin/curl -V
@@ -276,25 +278,25 @@ HTTP/1.1 200 OK
 (snip)
 ```
 
-OpenSSL でも同様の変更が v1.1.1 で入っているようです [^11]。
+OpenSSL でも同様の変更が v1.1.1 で入っているようです[^11]。
 
 # ブラウザが証明書チェーンを検証できた理由
-Chrome は SSL/TLS ライブラリとして [BoringSSL](https://www.chromium.org/Home/chromium-security/boringssl) という OpenSSL フォークを使っていますが、調べてみると証明書の検証は Chromium の独自実装が行っているようでした [^12] [^13]。おそらく、後述する libpkix を参考にして実装しており、当初から今回の問題は回避できていたと思われます [^14]。
+Chrome は SSL/TLS ライブラリとして [BoringSSL](https://www.chromium.org/Home/chromium-security/boringssl) という OpenSSL フォークを使っていますが、調べてみると証明書の検証は Chromium の独自実装が行っているようでした[^12] [^13]。おそらく、後述する libpkix を参考にして実装しており、当初から今回の問題は回避できていたと思われます[^14]。
 
-Firefox の SSL/TLS ライブラリ libpkix は、詳しくは追いませんが、少なくとも現時点での最新のバージョン v3.53.1 で複数の証明書チェーンを組み立てることを確認しました [^15]。
+Firefox の SSL/TLS ライブラリ libpkix は、詳しくは追いませんが、少なくとも現時点での最新のバージョン v3.53.1 で複数の証明書チェーンを組み立てることを確認しました[^15]。
 
 ゆえに Chrome, Firefox では有効な証明書チェーンを組むことができ、安全な Web サイトとして表示できたのです。
 
 
 # blackbox_exporter が証明書期限切れを報告した理由
-blackbox_exporter が報告するメトリクスのうち、証明書期限の監視に使っていた `probe_ssl_earliest_cert_expiry` は、**実際に証明書検証に利用したチェーンではなく、サーバーから送られた証明書チェーンのうち最も短い失効期限を返す**、という実装 [^16] だったため、期限切れを報告していたことが分かりました。
+blackbox_exporter が報告するメトリクスのうち、証明書期限の監視に使っていた `probe_ssl_earliest_cert_expiry` は、**実際に証明書検証に利用したチェーンではなく、サーバーから送られた証明書チェーンのうち最も短い失効期限を返す**、という実装[^16] だったため、期限切れを報告していたことが分かりました。
 
 以上で、今回発生した事象の原理はすべて説明できました。
 
 # 学びと対策
 blog.cookpad.dk:443 については、期限が切れたクロス証明書をチェーンに含めるのをやめれば、現在の cURL on macOS でも証明書チェーンを検証できるはずです。しかし別のルート証明書から証明書チェーンを組み立てることは可能であり、それが PKI においては自然なことなので、blog.cookpad.dk をホストしている medium.com の落ち度はない…はずです。ただ古い OpenSSL/LibreSSL を使っているクライアントは期限切れと判断し TLS 接続に失敗することは確かです。
 
-blackbox_exporter の `probe_ssl_earliest_cert_expiry` メトリクスは、サーバーから送出された証明書チェーンのみを見ています。blackbox_exporter のメンテナは、メトリクスのセマンティクスとしては正しく、実装を変える気はないと主張しました [^17]。しかし、証明書チェーンが複数構築できる場合でこのメトリクスを使う限り、「有効な証明書チェーンが見つからなくなるのはいつか == TLS 接続で実際いつ証明書期限エラーが起こるのか」の判断には使えません。別のメトリクスとして実装するのはいいんじゃない? という議論の流れになっていましたが、誰も手を付けていなかったので、自分が [PR](https://github.com/prometheus/blackbox_exporter/pull/636) を出し無事マージされました。この変更が入った v0.17.0 がリリースされ、新しいメトリクスを使うように監視を切り替えることができ、やりたかった証明書期限監視ができるようになりました。めでたしめでたし。
+blackbox_exporter の `probe_ssl_earliest_cert_expiry` メトリクスは、サーバーから送出された証明書チェーンのみを見ています。blackbox_exporter のメンテナは、メトリクスのセマンティクスとしては正しく、実装を変える気はないと主張しました[^17]。しかし、証明書チェーンが複数構築できる場合でこのメトリクスを使う限り、「有効な証明書チェーンが見つからなくなるのはいつか == TLS 接続で実際いつ証明書期限エラーが起こるのか」の判断には使えません。別のメトリクスとして実装するのはいいんじゃない? という議論の流れになっていましたが、誰も手を付けていなかったので、自分が [PR](https://github.com/prometheus/blackbox_exporter/pull/636) を出し無事マージされました。この変更が入った v0.17.0 がリリースされ、新しいメトリクスを使うように監視を切り替えることができ、やりたかった証明書期限監視ができるようになりました。めでたしめでたし。
 
 # 参考文献
 - [Knowledge: Sectigo AddTrust External CA Root Expiring May 30, 2020](https://support.sectigo.com/articles/Knowledge/Sectigo-AddTrust-External-CA-Root-Expiring-May-30-2020)
@@ -302,8 +304,6 @@ blackbox_exporter の `probe_ssl_earliest_cert_expiry` メトリクスは、サ�
 
 # 謝辞
 原因究明やこの文章をまとめるにあたり、同僚の [@sora_h](https://twitter.com/sora_h) にかなり色々助けてもらったので感謝。
-
----
 
 [^1]: https://tools.ietf.org/html/rfc5246
 [^2]: https://tools.ietf.org/html/rfc5280

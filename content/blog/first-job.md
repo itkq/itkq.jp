@@ -2,7 +2,7 @@
 categories = []
 date = "2017-07-13T00:30:23+09:00"
 slug = "get-my-first-job"
-tags = ["misc"]
+tags = ["Job Hunting"]
 draft = false
 title = "新卒就活を終えた"
 +++
@@ -11,6 +11,8 @@ title = "新卒就活を終えた"
 
 - 新卒就職活動を終了したので供養をする
 - 社会に出る前にやれることをやるぞ
+
+<!--more-->
 
 # 会社を選ぶ
 会社を選ぶ上で考えたことを書ける範囲で書く。

@@ -3,12 +3,15 @@ date = "2015-12-09T04:08:58+09:00"
 draft = false
 title = "Tweetbot for Mac のツイート投稿画面でアカウントを切り替えるショートカット"
 slug = "tweetbot-shortcut"
-tags = [ "Mac", "Tweetbot" ]
+tags = [ "Tweetbot" ]
 +++
 
 ## 経緯
 複数アカウントを使う僕にとって重宝している Twitter クライアント「Tweetbot for Mac」だが、1つだけ弱点がある。
 それは、ツイート投稿画面 (⌘+N) でアカウントの切り替え方法がマウスによる操作しかないことだ。
+
+<!--more-->
+
 <a href="/img/2015-12-10_12.39.29.png"><img src="/img/2015-12-10_12.39.29.png" width="100%"/></a>
 
 アイコンをクリック、screen\_name を選択クリックの2ステップ必要になる。

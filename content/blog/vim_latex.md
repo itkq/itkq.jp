@@ -12,6 +12,8 @@ LaTeX環境を構築しようと思った．
 MacTexをインストールしようと思っていたけど，「それDockerでよくない？」と言われて確かに，となった．  
 なぜ今まで気が付かなかったんだろう．
 
+<!--more-->
+
 "texlive docker" で適当に検索をかけると既存のイメージがヒットした．  
 [harshjv/texlive-2015 public - Docker Hub](https://hub.docker.com/r/harshjv/texlive-2015/)
 

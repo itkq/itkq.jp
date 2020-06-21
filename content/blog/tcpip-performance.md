@@ -2,13 +2,15 @@
 categories = []
 date = "2017-07-16T19:44:55+09:00"
 description = ""
-tags = ["Networking"]
+tags = ["TCP/IP"]
 slug = "tcpip-performance"
 title = "TCP/IP とパフォーマンス"
 +++
 
 この文章は、ハイパフォーマンスブラウザネットワーキングを読んで、改めて TCP/IP を自分の中で整理し、パフォーマンスに関する内容を簡単にまとめたものである。
 [情報通信ネットワーク特論](http://www.ocw.titech.ac.jp/index.php?module=General&action=T0300&GakubuCD=2&GakkaCD=321818&KeiCD=18&course=18&KougiCD=201604718&Nendo=2016&lang=JA&vid=03)を受講しておりタイミングが良かったという理由もある。
+
+<!--more-->
 
 # IP
 IP は、パケット交換によるデータ通信網を実現するためのプロトコルである。The Internet ができる前は、Hop-by-Hop（中間ノード間）で信頼性を確保していた。TCP/IP は、経路到達性と信頼性を IP と TCP の形で分離したプロトコルスイートである。この分離により、複雑なトランスポート機能はエンドシステムだけで行えるようになった。このような設計思想は End-to-End Principle と呼ばれる。

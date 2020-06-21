@@ -3,11 +3,13 @@ title = "Envoy proxy と consul-template を使った Fault injection を試し�
 slug = "envoy-consul-template-failure-injection-sample"
 date = "2018-09-12T23:49:16+09:00"
 draft = false
-tags = ["chaos engineering"]
+tags = ["Envoy", "Chaos Engineering"]
 +++
 
 ## モチベーション
 サービスメッシュのための Side-car proxy として有名な [Envoy proxy](https://www.envoyproxy.io/) (以下 Envoy) がある。Envoy は Observability や Resiliency など便利な機能の他に、Fault Injection 機能を持つ。この Fault injection は、システム全体の可用性を向上させるためのシステム間通信の障害のエミュレートに使われるものであり、これは一般に Chaos Engineering や Resiliency Testing と呼ばれる。
+
+<!--more-->
 
 最近 Chaos Engineering に興味があったため、Envoy を使った簡単な Fault Injection を試すことにした。Envoy で Fault Injection をするためには [Fault Injection filter](https://www.envoyproxy.io/docs/envoy/latest/api-v1/http_filters/fault_filter#config-http-filters-fault-injection-v1) を利用する。Fault Injection filter の設定を行えば、「ある upstream に対してリクエストするとき、ある確率で 503 を返す、または (同時に) ある確率でレスポンスを 1 秒遅らせる」といったことが可能である。Chaos Engineering の文脈で Fault Injection を行う場合は、どの程度・どの期間障害を起こすのか設定する必要があり、すなわち Fault Injection filter の設定を動的に変更する必要がある。Envoy には [Runtime configuration](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/runtime#arch-overview-runtime) という機能がある。あるファイルシステムツリーに設定値を書き、Envoy が watch する特定のシンボリックリンクをそのツリーに貼り直すと、Envoy が動的にその設定値を使うようになる、というものだ。Fault Injection filter で設定する値も Runtime configuration による設定が可能である。Runtime configuration 以外にも [Listener discovery service](https://www.envoyproxy.io/docs/envoy/latest/configuration/listeners/lds) (LDS) を使う手もありそうだったが、Listen している socket が変更される cons がありそうだったため今回は Runtime configuration だけ試した。
 

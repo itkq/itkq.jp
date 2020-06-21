@@ -3,7 +3,7 @@ title = "クックパッド株式会社に新卒入社した"
 date = "2018-04-02T23:02:18+09:00"
 draft = false
 description = ""
-tags = ["misc"]
+tags = ["Job Hunting", "Misc"]
 slug = "join-cookpad"
 
 +++

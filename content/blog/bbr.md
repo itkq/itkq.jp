@@ -2,13 +2,15 @@
 categories = []
 date = "2017-07-31T22:30:43+09:00"
 description = ""
-tags = ["Networking"]
+tags = ["TCP/IP"]
 title = "BBR: Congestion-Based Congestion Control とは"
 slug = "bbr"
 
 +++
 
-最近 [TCP BBR congestion control comes to GCP – your Internet just got faster](https://cloudplatform.googleblog.com/2017/07/TCP-BBR-congestion-control-comes-to-GCP-your-Internet-just-got-faster .html) が話題になっていた．しかし，この記事を読んだ時点での自分の BBR についての知識は，「既存のものよりいい感じにしてくれる輻輳制御」ぐらいだった．これではまずいということで，BBR とはなんなのかについて，既存の輻輳制御にも触れながら，元の論文[^1] をメインにまとめた．自分が理解するための文書であるが，一応としての想定読者は，TCP が輻輳制御を行っていることを知っているぐらいの人である．TCP については，拙著の [TCP/IP とパフォーマンス](/blog/2017/07/16/tcpip-performance/) に短くまとめてあるので参照できる．
+最近 [TCP BBR congestion control comes to GCP – your Internet just got faster](https://cloudplatform.googleblog.com/2017/07/TCP-BBR-congestion-control-comes-to-GCP-your-Internet-just-got-faster.html) が話題になっていた．しかし，この記事を読んだ時点での自分の BBR についての知識は，「既存のものよりいい感じにしてくれる輻輳制御」ぐらいだった．これではまずいということで，BBR とはなんなのかについて，既存の輻輳制御にも触れながら，元の論文[^1] をメインにまとめた．自分が理解するための文書であるが，一応としての想定読者は，TCP が輻輳制御を行っていることを知っているぐらいの人である．TCP については，拙著の [TCP/IP とパフォーマンス](/blog/2017/07/16/tcpip-performance/) に短くまとめてあるので参照できる．
+
+<!--more-->
 
 免責事項:  
 TCP を深く研究しているわけではなく，間違いを記述している可能性があります．コメントで教えていただけると助かります．

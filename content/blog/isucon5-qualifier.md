@@ -3,11 +3,13 @@ date = "2015-10-09T11:25:38+09:00"
 draft = false
 title = "学生枠でISUCON5に参加してみたら運良く予選を突破した"
 slug = "isucon5-qualifier"
-tags = [ "Contest" ]
+tags = [ "ISUCON", "Contest" ]
 +++
 
 もう結構前のことになりますが、ISUCON5 というコンテストに参加しました。  
 書くことあんまりないからって書かないでいたらチームメイトから書くように煽られてしまったので書きます。
+
+<!--more-->
 
 ## 準備
 バイト先の先輩である shiki に誘われて、その友人の [@nemupm](https://twitter.com/nemupm) と僕 [@itkq](https://twitter.com/itkq) の

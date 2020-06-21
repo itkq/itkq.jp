@@ -3,10 +3,13 @@ date = "2016-10-27T22:14:40+09:00"
 draft = false
 title = "LaTeXiTのCLIみたいなのを書いた"
 tags = [ "LaTeX" ]
+slug = "latexit-cli"
 +++
 
 [ LaTeXiT ]( https://www.chachatelier.fr/latexit/ )というTeX形式の数式を入力するとTeX形式の画像を出力するツールを知った．  
 研究発表のスライドを作る場合に，TeX形式の画像を貼り付けたいことがあり，早速インストールした．
+
+<!--more-->
 
 [最近のVim+LaTeX事情](http://blog.itkq.jp/post/vim-latex/) に書いたように，最近はTexLiveのDockerイメージでLaTeX文書をコンパイルしている．  
 LaTeXiTのコンパイル設定をカスタマイズすれば対応できると思ったが，うまくいかなかった．

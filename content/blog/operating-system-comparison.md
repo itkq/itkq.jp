@@ -2,13 +2,15 @@
 categories = []
 date = "2017-05-01T15:14:42+09:00"
 description = ""
-tags = ["Unix"]
+tags = ["Unix", "OS"]
 title = "Unix 以外のオペレーティングシステム"
 slug = "operating-system-comparison"
 
 +++
 
 Unix 以外の簡単な歴史と特徴をまとめる。
+
+<!--more-->
 
 # MacOS
 Macintosh OS は、先駆的な GUI 研究に刺激されてた 1980年代初期の Apple 社で開発された。世に出たのは 1984年の Macintosh 発売と同時である。

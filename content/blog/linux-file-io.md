@@ -2,7 +2,7 @@
 categories = []
 date = "2017-05-10T16:11:33+09:00"
 description = ""
-tags = ["Linux"]
+tags = ["Linux", "I/O"]
 title = "Linux におけるファイル I/O の基礎"
 slug = "linux-file-and-io"
 draft = false
@@ -11,6 +11,8 @@ draft = false
 すべてがファイルというモデルの Linux (Unix) において、ファイル I/O (以降単に I/O と書く) を知っておいて損はない。
 この記事では、基本的なファイルと関連する I/O について、対応する Linux システムコールも併せて説明する。
 次回はこれらを実際に Linux 上で確認する予定。
+
+<!--more-->
 
 # ファイル
 Unix におけるファイルとは、普通「通常ファイル」のことを指し、バイトがリニアに並んだデータ (byte stream) のことである。
