@@ -226,7 +226,7 @@ Mozilla Firefox は、[Mozilla Network Security Services (NSS)](http://www.mozil
 
 証明書チェーンの検証は、基本的にその証明書が有効であるか・上位 CA の公開鍵で署名されているかを確認します。署名した上位証明書を識別するために、基本的に SKI と AKI が使われます。例を挙げると、リーフ証明書を署名した公開鍵の ID は AKI から keyid:8D:8C:5E…8D:61:E1 です。証明書チェーンには SKI が 8D:8C:5E…8D:61:E1 である証明書を見つけることができ、この証明書に同梱された公開鍵でリーフ証明書が署名された、つまり中間証明書であることが分かります。署名の検証に成功すれば、正しい中間証明書だということができます。
 
-ここで重要なことですが、**証明書チェーンは複数構築できる場合があり、そしてそれは PKI の性質上自然なことです。** この文章を書いた時点では、USERTrust RSA Certification Authority の証明書 (SKI: 53:79:BF:5A:AA:2B:4A:CF:54:80:E1:D8:9B:C0:9D:F2:B2:03:66:CB) は 2 つ存在します。
+ここで重要なことですが、**証明書チェーンは複数構築できる場合があり、そしてそれは Web PKI の性質上自然なことです。** この文章を書いた時点では、USERTrust RSA Certification Authority の証明書 (SKI: 53:79:BF:5A:AA:2B:4A:CF:54:80:E1:D8:9B:C0:9D:F2:B2:03:66:CB) は 2 つ存在します。
 
 1. 自己署名のルート証明書 (2010 年発行): https://crt.sh/?id=1199354
 2. AddTrust External CA root が発行したクロス証明書 (2000 年発行): https://crt.sh/?id=4860286
@@ -250,7 +250,7 @@ Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s
 Features: AsynchDNS GSS-API HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz MultiSSL NTLM NTLM_WB SPNEGO SSL UnixSockets
 ```
 
-このバージョンの LibreSSL は、有効な証明書チェーンが別に作れる可能性があっても、途中で失効している証明書があった場合は検証を即座に失敗させる実装になっており、証明書切れのエラーになったようです。なお v.3.2.0 では別の証明書チェーンも探す変更が入っており[^10]、たしかに最新の cURL で試してみるとエラーは起きませんでした。
+このバージョンの LibreSSL は、有効な証明書チェーンが別に作れる可能性があっても、途中で失効している証明書があった場合は検証を即座に失敗させる実装になっており、証明書切れのエラーになったようです。なお v.3.2.0 では別の証明書チェーンも探す変更が入っており[^10]、たしかに最新の LibreSSL がリンクされた cURL で試してみるとエラーは起きませんでした。
 
 ```console
 $ /opt/brew/opt/curl/bin/curl -V
