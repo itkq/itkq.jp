@@ -1,6 +1,7 @@
 ---
 title: "Cross-certificates の整理"
 date: 2020-11-12T23:23:15+09:00
+slug: "cross-certificates"
 draft: false
 tags: ["X509", "TLS"]
 ---
