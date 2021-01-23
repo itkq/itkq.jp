@@ -9,10 +9,12 @@ Software Engineer. Likes automation and animation. Interested in SRE and Chaos E
 
 ### Experience
 
-- Apr. 2018 - in present
-    - Software Engineer (SRE) @ Cookpad Inc.
+- Jan. 2021 - in present
+    - Software Engineer (SRE) @ [Ubie, Inc.](https://ubie.life/)
+- Apr. 2018 - Jan. 2021
+    - Software Engineer (SRE) @ [Cookpad Inc.](https://info.cookpad.com/)
 - Dec. 2016 - Mar. 2018
-    - Part-time Software Engineer @ Cookpad Inc.
+    - Part-time Software Engineer @ [Cookpad Inc.](https://info.cookpad.com/)
 
 ### Education
 
