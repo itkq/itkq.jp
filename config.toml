@@ -35,3 +35,8 @@ blog = "/blog/:year/:month/:day/:slug"
 useHugoPipes = true
 # showLicense = true
 # showToc = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
