@@ -5,7 +5,7 @@ title = "About"
 
 +++
 
-Software Engineer. Likes automation and animation. Interested in SRE and Chaos Engineering.
+A Software Engineer. Love automation. Aim for operability.
 
 ### Experience
 
