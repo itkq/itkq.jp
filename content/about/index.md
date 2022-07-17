@@ -19,9 +19,11 @@ A Software Engineer. Love automation. Aim for operability.
 ### Education
 
 - Apr. 2016 - Mar. 2018
-    - Masters of ICE @ Tokyo Institute of Technology
+    - Master's of Information and Communications Engineering @ Tokyo Institute of Technology
 - Apr. 2014 - Mar. 2016
-    - Bachelor of CS @ Tokyo Institute of Technology
+    - Bachelor's of Computer Science @ Tokyo Institute of Technology
+- Apr. 2009 - Mar. 2014
+    - National Institute of Technology, Nagano College
 
 ### Certification
 
