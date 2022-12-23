@@ -28,6 +28,6 @@ A Software Engineer. Love automation. Aim for operability.
 ### Certification
 
 - Aug. 2022
-    - Professional Cloud DevOps Engineer
+    - [Google Cloud - Professional Cloud DevOps Engineer](https://cloud.google.com/certification/cloud-devops-engineer)
 - Aug. 2018
-    - AWS Certified Solutions Architect - Associate (Released February 2018)
+    - [AWS Certified Solutions Architect - Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/) (Released February 2018)
