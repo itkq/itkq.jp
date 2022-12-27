@@ -9,7 +9,7 @@ A Software Engineer. Love automation. Aim for operability.
 
 ### Experience
 
-- Jan. 2021 - in present
+- Jan. 2021 - Feb. 2023
     - Software Engineer (SRE) @ [Ubie, Inc.](https://ubie.life/)
 - Apr. 2018 - Jan. 2021
     - Software Engineer (SRE) @ [Cookpad Inc.](https://info.cookpad.com/)
