@@ -9,6 +9,8 @@ A Software Engineer. Love automation. Aim for operability.
 
 ### Experience
 
+- Feb. 2023 - present
+    - Software Engineer @ [LayerX Inc.](https://layerx.co.jp/)
 - Jan. 2021 - Feb. 2023
     - Software Engineer (SRE) @ [Ubie, Inc.](https://ubie.life/)
 - Apr. 2018 - Jan. 2021
