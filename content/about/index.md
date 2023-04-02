@@ -33,3 +33,9 @@ A Software Engineer. Love automation. Aim for operability.
     - [Google Cloud - Professional Cloud DevOps Engineer](https://cloud.google.com/certification/cloud-devops-engineer)
 - Aug. 2018
     - [AWS Certified Solutions Architect - Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/) (Released February 2018)
+
+### Accounts
+
+<ul>
+  <li><a rel="me" href="https://mastodon.cloud/@itkq">mastodon.cloud</a></li>
+</ul>
