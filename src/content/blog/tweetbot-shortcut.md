@@ -13,14 +13,14 @@ tags: [ "Tweetbot" ]
 
 <!--more-->
 
-<a href="/img/2015-12-10_12.39.29.png"><img src="/img/2015-12-10_12.39.29.png" width="100%"/></a>
+<a href="/public/2015-12-10_12.39.29.png"><img src="/public/2015-12-10_12.39.29.png" width="100%"/></a>
 
 アイコンをクリック、screen\_name を選択クリックの2ステップ必要になる。
 折角 Global New Tweet Key を備えていても、マウス操作が必要になってしまう。
 
 ということをぼやいていたら次のような意見を頂いた。
 
-<a href="/img/2015-12-10_12.44.39.png"><img src="/img/2015-12-10_12.44.39.png" width="100%"/></a>
+<a href="/public/2015-12-10_12.44.39.png"><img src="/public/2015-12-10_12.44.39.png" width="100%"/></a>
 
 なるほどやってみることにした。
 
