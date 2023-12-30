@@ -32,8 +32,8 @@ A Software Engineer. Love automation. Aim for operability.
 - Aug. 2018
     - [AWS Certified Solutions Architect - Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/) (Released February 2018)
 
-### Accounts
+### Links
 
-<ul>
-  <li><a rel="me" href="https://mastodon.cloud/@itkq">mastodon.cloud</a></li>
-</ul>
+- [Mastodon](https://mastodon.cloud/@itkq)
+- [Keybase](https://keybase.io/itkq)
+- [Wishlist](https://itkq.page.link/wishlist)
