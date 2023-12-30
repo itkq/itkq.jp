@@ -3,7 +3,6 @@ author: Sat Naing
 pubDatetime: 2022-09-26T12:13:24Z
 title: Predefined color schemes
 slug: predefined-color-schemes
-featured: false
 draft: false
 tags:
   - color-schemes

@@ -59,7 +59,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       <ul>
         {
           sortedPosts
-            .filter(({ data }) => !data.featured)
             .map(
               ({ data, slug }, index) =>
                 index < 4 && (
@@ -112,12 +111,10 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
   }
 
-  /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
+  /* ===== Recent Posts Sections ===== */
   #recent-posts {
     @apply pb-6 pt-12;
   }
-  #featured h2,
   #recent-posts h2 {
     @apply text-2xl font-semibold tracking-wide;
   }
