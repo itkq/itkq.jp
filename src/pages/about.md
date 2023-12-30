@@ -3,34 +3,37 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
+A Software Engineer. Love automation. Aim for operability.
 
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
+### Experience
 
-This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
+- Feb. 2023 - present
+    - Software Engineer @ [LayerX Inc.](https://layerx.co.jp/)
+- Jan. 2021 - Feb. 2023
+    - Software Engineer (SRE) @ [Ubie, Inc.](https://ubie.life/)
+- Apr. 2018 - Jan. 2021
+    - Software Engineer (SRE) @ [Cookpad Inc.](https://info.cookpad.com/)
+- Dec. 2016 - Mar. 2018
+    - Part-time Software Engineer @ [Cookpad Inc.](https://info.cookpad.com/)
 
-<div>
-  <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
-</div>
+### Education
 
-## Tech Stack
+- Apr. 2016 - Mar. 2018
+    - Master's of Information and Communications Engineering @ Tokyo Institute of Technology
+- Apr. 2014 - Mar. 2016
+    - Bachelor's of Computer Science @ Tokyo Institute of Technology
+- Apr. 2009 - Mar. 2014
+    - National Institute of Technology, Nagano College
 
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
+### Certification
 
-## Features
+- Aug. 2022
+    - [Google Cloud - Professional Cloud DevOps Engineer](https://cloud.google.com/certification/cloud-devops-engineer)
+- Aug. 2018
+    - [AWS Certified Solutions Architect - Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/) (Released February 2018)
 
-Here are certain features of this site.
+### Accounts
 
-- fully responsive and accessible
-- SEO-friendly
-- light & dark mode
-- fuzzy search
-- super fast performance
-- draft posts
-- pagination
-- sitemap & rss feed
-- highly customizable
-
-If you like this theme, you can star/contribute to the [repo](https://github.com/satnaing/astro-paper).  
-Or you can even give any feedback via my [email](mailto:contact@satnaing.dev).
+<ul>
+  <li><a rel="me" href="https://mastodon.cloud/@itkq">mastodon.cloud</a></li>
+</ul>
