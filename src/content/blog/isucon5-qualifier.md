@@ -1,10 +1,13 @@
-+++
-date = "2015-10-09T11:25:38+09:00"
-draft = false
-title = "学生枠でISUCON5に参加してみたら運良く予選を突破した"
-slug = "isucon5-qualifier"
-tags = [ "ISUCON", "Contest" ]
-+++
+---
+title: 学生枠でISUCON5に参加してみたら運良く予選を突破した
+pubDatetime: 2015-10-09T11:25:38+09:00
+slug: isucon5-qualifier
+draft: false
+tags:
+  - ISUCON
+  - Contest
+description: ""
+---
 
 もう結構前のことになりますが、ISUCON5 というコンテストに参加しました。  
 書くことあんまりないからって書かないでいたらチームメイトから書くように煽られてしまったので書きます。
