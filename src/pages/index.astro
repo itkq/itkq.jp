@@ -9,6 +9,8 @@ import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SOCIALS } from "@config";
+import { date } from "astro/zod";
+import getSlugWithDate from "@utils/getSlugWithDate";
 
 const posts = await getCollection("blog");
 
@@ -59,6 +61,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       <ul>
         {
           sortedPosts
+            .map(p => { return { data: p.data, slug: getSlugWithDate(p) } })
             .map(
               ({ data, slug }, index) =>
                 index < 4 && (

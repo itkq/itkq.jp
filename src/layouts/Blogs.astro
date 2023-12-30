@@ -7,6 +7,7 @@ import Footer from "@components/Footer.astro";
 import Pagination from "@components/Pagination.astro";
 import Card from "@components/Card";
 import { SITE } from "@config";
+import getSlugWithDate from "@utils/getSlugWithDate";
 
 export interface Props {
   currentPage: number;
@@ -22,9 +23,10 @@ const { currentPage, totalPages, paginatedPosts } = Astro.props;
   <Main pageTitle="Posts">
     <ul>
       {
-        paginatedPosts.map(({ data, slug }) => (
-          <Card href={`/blogs/${slug}`} frontmatter={data} />
-        ))
+        paginatedPosts.map(p => { return { data: p.data, slug: getSlugWithDate(p) } }).
+          map(({ data, slug }) => (
+            <Card href={`/blogs/${slug}`} frontmatter={data} />
+          ))
       }
     </ul>
   </Main>
