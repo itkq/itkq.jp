@@ -16,7 +16,7 @@ const searchList = posts.map(({ data, slug }) => ({
   description: data.description,
   data,
   slug,
-}));
+})).sort((a, b) => b.data.pubDatetime.getTime() - a.data.pubDatetime.getTime());
 ---
 
 <Layout title={`Search | ${SITE.title}`}>
