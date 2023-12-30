@@ -71,7 +71,7 @@ TCP は，End-to-End のプロトコルであるため，End-to-End の経路上
 
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/bdp_inflight.png"/><br>
+  <img class="img-responsive" src="/public/bbr/bdp_inflight.png"/><br>
   <i>Fig. delivery rate and round-trip time vs. inflight (quoted from </i>
   <sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>  )
 </div>
@@ -99,7 +99,7 @@ End-to-End の輻輳制御は，次の3種類に分類される[^6]．
 BSD 4.3 の輻輳制御である．後に Reno へと改良される．ちなみに，Tahoe, Reno の名前は，ネバダ州 Reno city の Tahoe 湖から来ているらしい[^7]．コネクション確立後，cwnd の値を 1 から指数的に増加させ (スロースタート), 輻輳を検知すると cwnd を 1 に戻す．このときの cwnd / 2 の値を閾値 (ssthresh) として記憶する．その後は，sshtresh まではスロースタートし，以降は線形に cwnd を増加させ，輻輳を検知したら cwnd を 1 に戻すルーチンを繰り返す．TCP Tahoe のウインドウ増加関数を次の図に示す[^8]．
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/tcp_tahoe.png"/><br>
+  <img class="img-responsive" src="/public/bbr/tcp_tahoe.png"/><br>
   <i>Scenario in TCP Tahoe, where congestion control reacts to a timed out ACK with a slow restart. (quoted from </i>
   <sup class="footnote-ref" id="fnref:8"><a rel="footnote" href="#fn:8">8</a></sup>
   )
@@ -109,7 +109,7 @@ BSD 4.3 の輻輳制御である．後に Reno へと改良される．ちなみ
 Tahoe を改良した手法で，輻輳を検知した時 cwnd を 1 まで落とすのではなく，sshtresh に落とす．過剰なウインドウサイズの減少をやめることで，スループットが増加した．TCP Reno のウインドウ増加関数を次の図<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>に示す．
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/tcp_reno.png"/><br>
+  <img class="img-responsive" src="/public/bbr/tcp_reno.png"/><br>
   <i>Scenario in TCP Reno, where congestion control reacts with fast retransmission as response to three duplicate ACKs. (quoted from </i>
   <sup class="footnote-ref" id="fnref:8"><a rel="footnote" href="#fn:8">8</a></sup>
   )
@@ -119,7 +119,7 @@ Tahoe を改良した手法で，輻輳を検知した時 cwnd を 1 まで落�
 BIC-TCP (Binary Increase Congestion Control) は，パケットロスの発生を平衡点とみなし，次の平衡点を探索するように動作する．パケットロス時点での cwnd を Wmax として記憶し，cwnd を減少させる．その後線形に増加させた (Additive Increase) 後，指数的に増加させる (Binary Search)．平衡点以降も，パケットロスが発生させるまでは cwnd を増加させる (Max Probing)．BIC-TCP ウインドウ増加関数の図を以下に示す．
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/tcp_bic.jpg"/><br>
+  <img class="img-responsive" src="/public/bbr/tcp_bic.jpg"/><br>
   <i>Fig. The Window Growth Function of BIC (quoted from </i>
   <sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>
   )
@@ -130,7 +130,7 @@ CUBIC-TCP は，BIC-TCP のウインドウ関数を三次関数で簡略化近�
 Linux 2.6.19 以降[^9]，Linux のデフォルト輻輳制御である．
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/tcp_cubic.jpg"/><br>
+  <img class="img-responsive" src="/public/bbr/tcp_cubic.jpg"/><br>
   <i>Fig. The Window Growth Function of CUBIC (quoted from </i>
   <sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">2</a></sup>
   )
@@ -165,7 +165,7 @@ pacing gain は，BtlBw に対するデータ送信速度の比であり，BBR �
 BtlBw が増加すると，delivery rate が増加し，新たな windowed-max-filter の出力が増加し，pacing rate が増加する．したがって，pacing rate の倍数増加で新たな bottleneck rate へ収束する．逆に BtlBw が低下すると，バッファ長の増加によって inflight, RTT が増加する．20 [Mbps] の windowed-max-filter が時間経過によって失われると，delivery rate が低下する．その後は，RTT が低下しなくなるまで inflight を低下させるように pacing gain を変化させ制御する．
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/bandwidth_change.png"/><br>
+  <img class="img-responsive" src="/public/bbr/bandwidth_change.png"/><br>
   <i>Fig. Bandwidth change (quoted from </i>
   <sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>  )
   <br>
@@ -218,7 +218,7 @@ BBR の評価について簡単にまとめる．
 最初のスロースタートの動作は似ているが，BBR はパイプをフルにしてからバッファをドレインするように動作するのに対し，CUBIC ではバッファを気にすることなく，パケットロスの発生または rwnd の制限まで inflight を線形に増加させる．CUBIC に対して， BBR は RTT を RTprop 付近に抑えつつ，CUBIC に近いスループットを出力している (上の図)．
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/first_second.png"/><br>
+  <img class="img-responsive" src="/public/bbr/first_second.png"/><br>
   <i>Fig. First second of a 10-Mbps, 40-ms BBR flow (quoted from </i>
   <sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>  )
 </div>
@@ -227,7 +227,7 @@ BBR の評価について簡単にまとめる．
 CUBIC (赤線) は，バッファを埋め尽くした後，数秒ごとに 70% ~ 100% のバッファを使用するサイクルを繰り返す．BBR (緑線) は，基本的にはバッファの待ち行列なしに実行される．
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/after_startup.png"/><br>
+  <img class="img-responsive" src="/public/bbr/after_startup.png"/><br>
   <i>Fig. First 8 second of a 10-Mbps, 40-ms CUBIC and BBR flow (quoted from </i>
   <sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>  )
 </div>
@@ -238,7 +238,7 @@ CUBIC (赤線) は，バッファを埋め尽くした後，数秒ごとに 70% 
 PROBE_RTT は，公平性と安定性の両方の鍵となる．推定 RTprop が数秒以上更新されていない場合，PROBE_RTT 状態に遷移し，バッファから多くのパケットを排出するため，いくつかのフローでは推定 RTprop が更新される (新たな最小 RTT)．
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/multiple_bbr_flows.png"/><br>
+  <img class="img-responsive" src="/public/bbr/multiple_bbr_flows.png"/><br>
   <i>Fig. Throughputs of 5 bbr flows sharing a bottleneck (quoted from </i>
   <sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>  )
 </div>
@@ -247,7 +247,7 @@ PROBE_RTT は，公平性と安定性の両方の鍵となる．推定 RTprop �
 B4[^11] は，コモディティスイッチで構築された Google の高速 WAN である．2015 年に，B4 の輻輳制御を CUBIC から BBR に切り替え始め，2016 年以降は BBR が 100% デプロイされている．切り替え理由の1つを示す次の図は，毎分 8 [MB] のデータを送信する BBR と CUBIC のコネクション (北米，ヨーロッパ，アジア間で多数の B4 経路を経由する) のスループット比較である．BBR のスループットは CUBIC のものよりも常に2倍〜25倍であることを示している．
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/rel_throughput.png"/><br>
+  <img class="img-responsive" src="/public/bbr/rel_throughput.png"/><br>
   <i>Fig. BBR vs. CUBIC relative throughput improvement (quoted from </i>
   <sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>  )
 </div>
@@ -256,7 +256,7 @@ B4[^11] は，コモディティスイッチで構築された Google の高速 
 この大幅なスループットの改善は，BBR が loss-based ではないことが直接的に影響している．次の図は，100 [Mbps], 100 [ms] のリンクで，60秒間のフローに対するランダムパケットロス率と goodput (送信者から受信者に正常に伝送された実際のデータ量を示す計測値) の関係の比較である．CUBIC (赤色) は，0.1% の損失でスループットが 1/10 になってしまう一方，BBR (緑色) は 15% の損失までは 95% のスループットを維持する．
 
 <div align="center">
-  <img class="img-responsive" src="/img/bbr/goodput_under_loss.png"/><br>
+  <img class="img-responsive" src="/public/bbr/goodput_under_loss.png"/><br>
   <i>Fig. BBR vs. CUBIC goodput under loss (quoted from </i>
   <sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>  )
 </div>
