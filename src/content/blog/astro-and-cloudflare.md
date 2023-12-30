@@ -28,7 +28,7 @@ mainブランチをproductionとしてデプロイするだけでなく、他の
 
 とくに気持ちがなかったので移行前の状態を保存しておくのを忘れた。移行後のLighthouseの数値は良好（フォントのダウンロードで減点されている）。
 
-![](/public/images/lighthouse-after.png)
+![](/images/lighthouse-after.png)
 
 ただ体感としては移行前よりサクサクになったのでヨシ!
 

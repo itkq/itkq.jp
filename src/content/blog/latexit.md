@@ -3,11 +3,11 @@ pubDatetime: 2016-10-27T22:14:40+09:00
 description: ""
 draft: false
 title: "LaTeXiTのCLIみたいなのを書いた"
-tags: [ "LaTeX" ]
+tags: ["LaTeX"]
 slug: "latexit-cli"
 ---
 
-[ LaTeXiT ]( https://www.chachatelier.fr/latexit/ )というTeX形式の数式を入力するとTeX形式の画像を出力するツールを知った．  
+[ LaTeXiT ](https://www.chachatelier.fr/latexit/)というTeX形式の数式を入力するとTeX形式の画像を出力するツールを知った．  
 研究発表のスライドを作る場合に，TeX形式の画像を貼り付けたいことがあり，早速インストールした．
 
 <!--more-->
@@ -24,6 +24,6 @@ LaTeXiTの動作は，コンパイル後にBounding boxを計算してトリミ�
 文字列をクリップボードにコピーする pbcopy は知っていたが，画像をコピーするものはないかと探したところ [impbcopy](https://gist.github.com/beng/806b8420cc16bcf8a07a) があった．
 これを利用して，実行するとクリップボード中の文字列に対応するTeX形式の画像をクリップボードにコピーするので，サクッと使える感じになった．
 
-<a href="/public/latexit-demo.gif"><img src="/public/latexit-demo.gif" width="70%"/></a>
+<a href="/latexit-demo.gif"><img src="/latexit-demo.gif" width="70%"/></a>
 
 本当はPopclipのExtensionとして作りたかったけどうまくいかなかった😇
