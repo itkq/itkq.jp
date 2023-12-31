@@ -5,7 +5,7 @@ title: "About"
 
 A Software Engineer. Love automation. Aim for operability.
 
-### Experience
+## Experience
 
 - Feb. 2023 - present
     - Software Engineer @ [LayerX Inc.](https://layerx.co.jp/)
@@ -16,7 +16,7 @@ A Software Engineer. Love automation. Aim for operability.
 - Dec. 2016 - Mar. 2018
     - Part-time Software Engineer @ [Cookpad Inc.](https://info.cookpad.com/)
 
-### Education
+## Education
 
 - Apr. 2016 - Mar. 2018
     - Master's of Information and Communications Engineering @ Tokyo Institute of Technology
@@ -25,14 +25,14 @@ A Software Engineer. Love automation. Aim for operability.
 - Apr. 2009 - Mar. 2014
     - National Institute of Technology, Nagano College
 
-### Certification
+## Certification
 
 - Aug. 2022
     - [Google Cloud - Professional Cloud DevOps Engineer](https://cloud.google.com/certification/cloud-devops-engineer)
 - Aug. 2018
     - [AWS Certified Solutions Architect - Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/) (Released February 2018)
 
-### Links
+## Links
 
 - [Mastodon](https://mastodon.cloud/@itkq)
 - [Keybase](https://keybase.io/itkq)
