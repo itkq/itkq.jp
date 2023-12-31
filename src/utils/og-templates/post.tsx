@@ -52,20 +52,25 @@ export default (post: CollectionEntry<"blog">) => {
             height: "90%",
           }}
         >
-          <p
-            style={{
-              fontSize: 72,
-              fontWeight: "bold",
-              maxHeight: "84%",
-              overflow: "hidden",
-            }}
-          >
-            {post.data.title}
-          </p>
+
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "90%",
+              maxHeight: "90%",
+              overflow: "hidden",
+              textAlign: "center",
+            }}
+          >
+            <p style={{ fontSize: 72, fontWeight: "bold" }}>{post.data.title}</p>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
               width: "100%",
               marginBottom: "8px",
               fontSize: 28,
@@ -75,7 +80,7 @@ export default (post: CollectionEntry<"blog">) => {
             </span>
 
             <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-              {SITE.title}
+              {new URL(SITE.website).hostname}
             </span>
           </div>
         </div>
