@@ -6,6 +6,7 @@ import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
+import getSlugWithDate from "@utils/getSlugWithDate";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -27,8 +28,9 @@ const {
 const { Content } = await post.render();
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
+const slug = getSlugWithDate(post);
 const ogUrl = new URL(
-  ogImageUrl ?? `/blogs/${slugifyStr(title)}.png`,
+  ogImageUrl ?? `/blog/${slug}.png`,
   Astro.url.origin
 ).href;
 
