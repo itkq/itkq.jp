@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "itkq",
   desc: "itkq's blog",
   title: "itkq.jp",
-  ogImage: "astropaper-og.jpg",
+  // ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 10,
 };
