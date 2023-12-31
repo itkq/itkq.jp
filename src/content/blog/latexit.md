@@ -12,7 +12,7 @@ slug: "latexit-cli"
 
 <!--more-->
 
-[最近のVim+LaTeX事情](http://blog.itkq.jp/post/vim-latex/) に書いたように，最近はTexLiveのDockerイメージでLaTeX文書をコンパイルしている．  
+[最近のVim+LaTeX事情](/blog/2016/09/04/vim-latex) に書いたように，最近はTexLiveのDockerイメージでLaTeX文書をコンパイルしている．  
 LaTeXiTのコンパイル設定をカスタマイズすれば対応できると思ったが，うまくいかなかった．
 コンパイルスクリプトでは，作業ディレクトリをマウントしてDockerイメージのコンパイルバイナリを走らせている．LaTeXiTが実行するコンパイルコマンドは，一時的に作成した
 /var/folders/.../.tex を絶対参照しており，その部分は書き換えようがなかった．
