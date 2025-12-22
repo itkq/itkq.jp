@@ -6,16 +6,12 @@ import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
-import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
-import { SOCIALS } from "@config";
 import getSlugWithDate from "@utils/getSlugWithDate";
 
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
-
-const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
 <Layout>
@@ -39,18 +35,43 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         </svg>
       </a>
 
-      <p>
-        Yo
-      </p>
-      {
-        // only display if at least one social link is enabled
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
+      <div class="extra-links" aria-label="additional links">
+        <LinkButton
+          href="https://github.com/itkq"
+          className="extra-link"
+          title="itkq.jp on Github"
+        >
+          GitHub
+        </LinkButton>
+        <LinkButton
+          href="https://twitter.com/itkq"
+          className="extra-link"
+          title="itkq.jp on Twitter"
+        >
+          Twitter
+        </LinkButton>
+        <LinkButton
+          href="https://itkq.hatenablog.com/"
+          className="extra-link"
+          title="itkq.hatenablog.com"
+        >
+          Hatena Blog
+        </LinkButton>
+        <LinkButton
+          href="https://like.itkq.jp"
+          className="extra-link"
+          title="like.itkq.jp"
+        >
+          Like
+        </LinkButton>
+        <LinkButton
+          href="https://health.itkq.jp"
+          className="extra-link"
+          title="health.itkq.jp"
+        >
+          Health
+        </LinkButton>
+      </div>
     </section>
 
     <Hr />
@@ -106,11 +127,11 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   #hero p {
     @apply my-2;
   }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+  .extra-links {
+    @apply mt-4 flex flex-wrap gap-x-4 gap-y-2;
   }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+  .extra-link {
+    @apply text-sm underline underline-offset-4;
   }
 
   /* ===== Recent Posts Sections ===== */
