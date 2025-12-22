@@ -61,6 +61,10 @@
       "prettier --plugin-search-dir=. --write"
     ]
   },
+  "engines": {
+    "node": ">=18.20.8",
+    "npm": ">=9.6.5"
+  },
   "overrides": {
     "@divriots/cheerio": {
       "undici": "5.29.0"
